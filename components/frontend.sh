@@ -3,7 +3,7 @@
 source components/common.sh
 
 #Used export instead of service file
-DOMAIN=msarathkumar.online
+DOMAIN=ksrihari.online
 
 OS_PREREQ
 
@@ -24,7 +24,9 @@ mkdir todo  &>>$LOG
 cd todo
 Stat $?
 
+Head "Downloading Component"
 DOWNLOAD_COMPONENT
+Stat $?
 
 cd frontend
 

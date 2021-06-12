@@ -6,7 +6,7 @@ source components/common.sh
 
 #Used export instead of service file
 
-DOMAIN=msarathkumar.online
+DOMAIN=ksrihari.online
 
 
 OS_PREREQ
@@ -19,6 +19,7 @@ cd /home/todo/
 
 Head "Installing go language"
 wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
+Stat $?
 
 
 go version
@@ -28,11 +29,13 @@ go version
 
 Head "Exporting to path"
 export PATH=$PATH:/usr/local/go/bin
+Stat $?
 
 source ~/.profile
 
 Head "Creating a directory go"
 mkdir ~/go &>>$LOG
+Stat $?
 
 
 mkdir -p ~/go/src &>>$LOG
@@ -40,7 +43,9 @@ mkdir -p ~/go/src &>>$LOG
 
 cd  ~/go/src/
 
+Head "Downloading Component"
 DOWNLOAD_COMPONENT
+Stat $?
 
 
 cd login/
@@ -49,8 +54,8 @@ cd login/
 apt update
 
 Head "Installing go-dep"
-
 apt install go-dep &>>$LOG
+Stat $?
 
 go get &>>$LOG
 

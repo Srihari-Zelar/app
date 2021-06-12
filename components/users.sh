@@ -14,26 +14,28 @@ cd /home/todo/
 
 
 DOWNLOAD_COMPONENT
+Stat $?
 
 
 apt update
+Stat $?
 
 Head "Installing Java"
 apt install openjdk-8-jre-headless -y &>>$LOG
-
-
 apt install openjdk-8-jdk-headless -y &>>$LOG
+Stat $?
 
 Head "Exporting java-jdk to JAVA_HOME"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+Stat $?
 
 Head "Installing Maven"
 apt install maven -y &>>$LOG
-
+Stat $?
 
 cd /home/todo/users/
 
-
+Head "Maven Packages"
 mvn clean package &>>$LOG
 
 Head "Change directory to target folder"
