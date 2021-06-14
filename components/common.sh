@@ -28,6 +28,6 @@ ERROR() {
 
 DOWNLOAD_COMPONENT() {
   Head "Downloading ${COMPONENT} Component"
-  git clone "https://github.com/Sarath-Zelarsoft/${COMPONENT}"
+  git clone "https://github.com/Srihari-Zelar/${COMPONENT}"
 
 }

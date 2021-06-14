@@ -39,9 +39,10 @@ Stat $?
 
 
 mkdir -p ~/go/src &>>$LOG
-
+Stat $?
 
 cd  ~/go/src/
+Stat $?
 
 Head "Downloading Component"
 DOWNLOAD_COMPONENT
@@ -49,7 +50,7 @@ Stat $?
 
 
 cd login/
-
+Stat $?
 
 apt update
 
@@ -58,12 +59,11 @@ apt install go-dep &>>$LOG
 Stat $?
 
 go get &>>$LOG
-
 go build &>>$LOG
-
+Stat $?
 
 Head "pass the EndPoints in Service File"
-sed -i -e "s/user_endpoint/user.${DOMAIN}/" systemd.service
+sed -i -e "s/USERS_ENDPOINT/users.${DOMAIN}/" systemd.service
 Stat $?
 
 Head "Setup the systemd Service"
