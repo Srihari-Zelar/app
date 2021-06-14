@@ -25,6 +25,9 @@ mkdir app  &>>$LOG
 cd app
 Stat $?
 
+rm -rf frontend
+Stat $?
+
 Head "Downloading Component"
 DOWNLOAD_COMPONENT
 Stat $?
