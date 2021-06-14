@@ -43,7 +43,7 @@ sed -i -e "s/REDIS_ENDPOINT/users.${DOMAIN}/" systemd.service
 Stat $?
 
 Head "Setup the systemd Service"
-mv systemd.service /etc/systemd/system/uesrs.service &>>$LOG
+mv systemd.service /etc/systemd/system/uers.service &>>$LOG
 Stat $?
 systemctl daemon-reload && systemctl start users && systemctl enable users &>>$LOG
 Stat $?
