@@ -13,7 +13,7 @@ Stat $?
 
 Head "starting Ngnix"
 systemctl start nginx
-systemctl enable ngnix
+systemctl enable nginx
 
 Head "installing NPM"
 apt install npm -y &>>$LOG
