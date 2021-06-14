@@ -33,7 +33,7 @@ Head "Installing Maven"
 apt install maven -y &>>$LOG
 Stat $?
 
-cd /home/todo/users/
+cd /home/app/users/
 
 Head "Maven Packages"
 mvn clean package &>>$LOG
