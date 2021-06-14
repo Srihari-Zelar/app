@@ -38,9 +38,6 @@ cd /home/todo/users/
 Head "Maven Packages"
 mvn clean package &>>$LOG
 
-Head "Change directory to target folder"
-cd target/
-
 Head "pass the EndPoints in Service File"
 sed -i -e "s/REDIS_ENDPOINT/users.${DOMAIN}/" systemd.service
 Stat $?
