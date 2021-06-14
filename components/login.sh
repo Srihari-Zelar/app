@@ -1,21 +1,17 @@
 #!/bin/bash
-
-
 source components/common.sh
 
-
 #Used export instead of service file
-
 DOMAIN=ksrihari.online
 
 
 OS_PREREQ
 
 Head "Adding user"
-useradd -m -s /bin/bash todo &>>$LOG
+useradd -m -s /bin/bash app &>>$LOG
 
 Head "Changing directory to todo"
-cd /home/todo/
+cd /home/app/
 
 Head "Installing go language"
 wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG

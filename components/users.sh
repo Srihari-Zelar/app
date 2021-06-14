@@ -7,10 +7,10 @@ source components/common.sh
 OS_PREREQ
 
 Head "Adding user"
-useradd -m -s /bin/bash todo &>>$LOG
+useradd -m -s /bin/bash app &>>$LOG
 
 Head "Changing directory"
-cd /home/todo/
+cd /home/app/
 
 
 DOWNLOAD_COMPONENT

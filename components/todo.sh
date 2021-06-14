@@ -12,11 +12,11 @@ apt install npm -y &>>$LOG
 Stat $?
 
 Head "Adding user"
-useradd -m -s /bin/bash todo &>>$LOG
+useradd -m -s /bin/bash app &>>$LOG
 Stat $?
 
 Head "Changing directory"
-cd /home/todo/
+cd /home/app/
 Stat $?
 
 Head "Downloading Component"
