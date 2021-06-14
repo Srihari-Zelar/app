@@ -41,7 +41,7 @@ Head "Change directory to target folder"
 cd target/
 
 Head "pass the EndPoints in Service File"
-sed -i -e "s/users.${DOMAIN}/" systemd.service
+sed -i -e "s/REDIS_ENDPOINT/users.${DOMAIN}/" systemd.service
 Stat $?
 
 Head "Setup the systemd Service"
