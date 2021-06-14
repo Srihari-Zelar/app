@@ -21,7 +21,6 @@ apt update
 Stat $?
 
 Head "Installing Java"
-apt install openjdk-8-jre-headless -y &>>$LOG
 apt install openjdk-8-jdk-headless -y &>>$LOG
 Stat $?
 
@@ -41,4 +40,12 @@ mvn clean package &>>$LOG
 Head "Change directory to target folder"
 cd target/
 
-java -jar users-api-0.0.1.jar
+Head "pass the EndPoints in Service File"
+sed -i -e "s/users.${DOMAIN}/" systemd.service
+Stat $?
+
+Head "Setup the systemd Service"
+mv systemd.service /etc/systemd/system/uesrs.service &>>$LOG
+Stat $?
+systemctl daemon-reload && systemctl start users && systemctl enable users &>>$LOG
+Stat $?
