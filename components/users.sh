@@ -13,6 +13,7 @@ Head "Changing directory"
 cd /home/app/
 
 
+rm -rf users
 DOWNLOAD_COMPONENT
 Stat $?
 
