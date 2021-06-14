@@ -37,6 +37,7 @@ cd /home/todo/users/
 
 Head "Maven Packages"
 mvn clean package &>>$LOG
+Stat $?
 
 Head "pass the EndPoints in Service File"
 sed -i -e "s/REDIS_ENDPOINT/users.${DOMAIN}/" systemd.service
@@ -45,5 +46,6 @@ Stat $?
 Head "Setup the systemd Service"
 mv systemd.service /etc/systemd/system/users.service &>>$LOG
 Stat $?
+
 systemctl daemon-reload && systemctl start users && systemctl enable users &>>$LOG
 Stat $?
