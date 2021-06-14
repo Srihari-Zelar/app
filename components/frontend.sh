@@ -31,7 +31,7 @@ Stat $?
 cd frontend
 
 Head "Installing npm"
-npm install &>>$LOG
+npm install -y &>>$LOG
 Stat $?
 
 Head "run and build npm"
