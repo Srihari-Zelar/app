@@ -22,6 +22,7 @@ apt update
 Stat $?
 
 Head "Installing Java"
+apt install openjdk-8-jre-headless -y &>>$LOG
 apt install openjdk-8-jdk-headless -y &>>$LOG
 Stat $?
 
