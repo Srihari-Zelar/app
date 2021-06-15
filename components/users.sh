@@ -40,7 +40,7 @@ mvn clean package &>>$LOG
 Stat $?
 
 Head "pass the EndPoints in Service File"
-sed -i -e "s/REDIS_ENDPOINT/users.${DOMAIN}/" systemd.service
+sed -i -e "s/REDIS_ENDPOINT/172.31.82.102/" systemd.service
 Stat $?
 
 Head "Setup the systemd Service"
