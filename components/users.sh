@@ -1,50 +1,39 @@
 #!/bin/bash
 
-
 source components/common.sh
-
 
 OS_PREREQ
 
-Head "Adding user"
+Head "User adding"
+deluser app
 useradd -m -s /bin/bash app &>>$LOG
 
-Head "Changing directory"
 cd /home/app/
-
 
 rm -rf users
 DOWNLOAD_COMPONENT
-Stat $?
 
+apt update  &>>$LOG
 
-apt update
-Stat $?
+Head "installing java"
+apt install openjdk-8-jre-headless  &>>$LOG
 
-Head "Installing Java"
-apt install openjdk-8-jre-headless -y &>>$LOG
-apt install openjdk-8-jdk-headless -y &>>$LOG
-Stat $?
+apt install openjdk-8-jdk-headless &>>$LOG
 
-Head "Exporting java-jdk to JAVA_HOME"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-Stat $?
+Head "exporting to java-home"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &>>$LOG
 
-Head "Installing Maven"
+Head "installing maven"
 apt install maven -y &>>$LOG
-Stat $?
 
 cd /home/app/users/
 
-Head "Maven Packages"
+Head "installing maven packages"
 mvn clean package &>>$LOG
-Stat $?
 
-Head "pass the EndPoints in Service File"
-#sed -i -e "s/AUTH_API_PORT/8080/" systemd.service
-cd target
+cd target/
+
 java -jar users-api-0.0.1.jar
-Stat $?
 
 Head "Setup the systemd Service"
 mv systemd.service /etc/systemd/system/users.service &>>$LOG
