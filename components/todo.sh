@@ -33,7 +33,7 @@ Stat $?
 
 Head "pass the EndPoints in Service File"
 #sed -i -e "s/REDIS_ENDPOINT/172.31.57.29/" systemd.service
-sed -i -e "s/REDIS_ENDPOINT/redis.$DOMAIN/" systemd.service
+sed -i -e "s/REDIS_ENDPOINT/redis.${DOMAIN}/" systemd.service
 Stat $?
 
 Head "Setup the systemd Service"
