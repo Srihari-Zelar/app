@@ -16,9 +16,9 @@ DOWNLOAD_COMPONENT
 apt update  &>>$LOG
 
 Head "installing java"
-apt install openjdk-8-jre-headless  &>>$LOG
+apt install openjdk-8-jre-headless -y &>>$LOG
 
-apt install openjdk-8-jdk-headless &>>$LOG
+apt install openjdk-8-jdk-headless -y &>>$LOG
 
 Head "exporting to java-home"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &>>$LOG
