@@ -12,6 +12,7 @@ apt install npm -y &>>$LOG
 Stat $?
 
 Head "Adding user"
+deluser app
 useradd -m -s /bin/bash app &>>$LOG
 Stat $?
 
