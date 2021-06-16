@@ -29,9 +29,9 @@ Stat $?
 
 source ~/.profile
 
-Head "Creating a directory go"
-mkdir ~/go &>>$LOG
-Stat $?
+#Head "Creating a directory go"
+#mkdir ~/go &>>$LOG
+#Stat $?
 
 
 mkdir -p ~/go/src &>>$LOG
