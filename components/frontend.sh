@@ -40,9 +40,9 @@ Stat $?
 
 Head "------------------------------"
 #sed -i '32 s/127.0.0.1/172.31.58.99/g' /var/www/html/app/frontend/config/index.js
-sed -i '32 s/127.0.0.1/login.${DOMAIN}/g' /var/www/html/app/frontend/config/index.js
+sed -i '32 s/127.0.0.1/login.$DOMAIN/g' /var/www/html/app/frontend/config/index.js
 #sed -i '36 s/127.0.0.1/172.31.49.87/g' /var/www/html/app/frontend/config/index.js
-sed -i '36 s/127.0.0.1/todo.${DOMAIN}/g' /var/www/html/app/frontend/config/index.js
+sed -i '36 s/127.0.0.1/todo.$DOMAIN/g' /var/www/html/app/frontend/config/index.js
 sed -i '40 s/127.0.0.1/0.0.0.0/g' /var/www/html/app/frontend/config/index.js
 Stat $?
 
