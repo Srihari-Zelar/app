@@ -36,10 +36,10 @@ Head "installing maven packages"
 mvn clean package &>>$LOG
 Stat $?
 
-cd target/
+#cd target/
 
-java -jar users-api-0.0.1.jar
-Stat $?
+#java -jar users-api-0.0.1.jar
+#Stat $?
 
 Head "Setup the systemd Service"
 mv systemd.service /etc/systemd/system/users.service &>>$LOG
