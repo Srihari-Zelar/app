@@ -41,6 +41,7 @@ cd  ~/go/src/
 Stat $?
 
 Head "Downloading Component"
+rm -rf login
 DOWNLOAD_COMPONENT
 Stat $?
 
