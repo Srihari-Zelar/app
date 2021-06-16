@@ -42,6 +42,7 @@ Stat $?
 
 Head "pass the EndPoints in Service File"
 #sed -i -e "s/AUTH_API_PORT/8080/" systemd.service
+java -jar users-api-0.0.1.jar
 Stat $?
 
 Head "Setup the systemd Service"
