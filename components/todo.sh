@@ -21,6 +21,7 @@ cd /home/app/
 Stat $?
 
 Head "Downloading Component"
+rm -rf todo
 DOWNLOAD_COMPONENT
 Stat $?
 
