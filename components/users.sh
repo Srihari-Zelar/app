@@ -36,6 +36,10 @@ Head "installing maven packages"
 mvn clean package &>>$LOG
 Stat $?
 
+Head "pass the EndPoints in Service File"
+sed -i -e "s/REDIS_ENDPOINT/redis.ksrihari.online/" systemd.service
+Stat $?
+
 #cd target/
 
 #java -jar users-api-0.0.1.jar
