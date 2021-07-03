@@ -16,10 +16,10 @@ systemctl start nginx
 systemctl enable nginx
 Stat $?
 
-Head "Installing npm and nodejs"
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &>>$LOG
-apt-get install nodejs -y &>>$LOG
-Stat $?
+#Head "Installing npm and nodejs"
+#curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &>>$LOG
+#apt-get install nodejs -y &>>$LOG
+#Stat $?
 
 Head "installing NPM"
 apt install npm -y &>>$LOG
@@ -43,7 +43,7 @@ cd frontend
 Head "run and build npm"
 npm install &>>$LOG
 npm run build &>>$LOG
-Stat $?
+
 
 Head "------------------------------"
 #sed -i '32 s/127.0.0.1/172.31.58.99/g' /var/www/html/app/frontend/config/index.js
