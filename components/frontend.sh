@@ -18,7 +18,7 @@ Stat $?
 
 Head "Installing npm and nodejs"
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &>>$LOG
-sudo apt-get install nodejs -y &>>$LOG
+apt-get install nodejs -y &>>$LOG
 Stat $?
 
 Head "installing NPM"
@@ -36,19 +36,20 @@ Stat $?
 
 Head "Downloading Component"
 DOWNLOAD_COMPONENT
-Stat $?
+
 
 cd frontend
 
 Head "run and build npm"
-sudo npm install --save-dev  --unsafe-perm node-sass &>>$LOG
+npm install &>>$LOG
+npm run build &>>$LOG
 Stat $?
 
 Head "------------------------------"
 #sed -i '32 s/127.0.0.1/172.31.58.99/g' /var/www/html/app/frontend/config/index.js
-sed -i '32 s/127.0.0.1/login.$DOMAIN/g' /var/www/html/app/frontend/config/index.js
+sed -i '32 s/127.0.0.1/login.ksrihari.online/g' /var/www/html/app/frontend/config/index.js
 #sed -i '36 s/127.0.0.1/172.31.49.87/g' /var/www/html/app/frontend/config/index.js
-sed -i '36 s/127.0.0.1/todo.$DOMAIN/g' /var/www/html/app/frontend/config/index.js
+sed -i '36 s/127.0.0.1/todo.ksrihari.online/g' /var/www/html/app/frontend/config/index.js
 #sed -i '40 s/127.0.0.1/0.0.0.0/g' /var/www/html/app/frontend/config/index.js
 Stat $?
 
