@@ -13,13 +13,7 @@ Stat $?
 
 Head "starting Ngnix"
 systemctl start nginx
-systemctl enable nginx
 Stat $?
-
-#Head "Installing npm and nodejs"
-#curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &>>$LOG
-#apt-get install nodejs -y &>>$LOG
-#Stat $?
 
 Head "installing NPM"
 apt install npm -y &>>$LOG
@@ -41,19 +35,28 @@ DOWNLOAD_COMPONENT
 cd frontend
 
 Head "run and build npm"
-npm install &>>$LOG
-npm run build &>>$LOG
-
+npm install &>>$LOG && npm install --save-dev  --unsafe-perm node-sass &>>$LOG && npm run build &>>$LOG
+Stat $?
 
 Head "------------------------------"
-#sed -i '32 s/127.0.0.1/172.31.58.99/g' /var/www/html/app/frontend/config/index.js
+
 sed -i '32 s/127.0.0.1/login.ksrihari.online/g' /var/www/html/app/frontend/config/index.js
-#sed -i '36 s/127.0.0.1/172.31.49.87/g' /var/www/html/app/frontend/config/index.js
 sed -i '36 s/127.0.0.1/todo.ksrihari.online/g' /var/www/html/app/frontend/config/index.js
-#sed -i '40 s/127.0.0.1/0.0.0.0/g' /var/www/html/app/frontend/config/index.js
 Stat $?
 
 Head "Starting NPM"
-systemctl restart nginx
 npm start
 Stat $?
+
+#    1  cd /var/www/html
+#    2  cd /var/
+#    3  ls
+#    4  cd
+#    5  apt update
+#    6  apt install npm -y
+#    7  git clone https://github.com/Srihari-Zelar/frontend.git
+#    8  cd frontend/
+#    9  ls
+#
+#   13  npm start
+#   14  history
