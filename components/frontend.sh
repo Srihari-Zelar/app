@@ -39,7 +39,7 @@ npm install shelljs &>>$LOG
 npm install -g npm@latest &>>$LOG && npm install --save-dev  --unsafe-perm node-sass &>>$LOG  && npm run build & &>>$LOG
 Stat $?
 
-Head "------------------------------"
+Head "------------xx------------------"
 
 sed -i '32 s/127.0.0.1/login.ksrihari.online/g' /var/www/html/app/frontend/config/index.js
 sed -i '36 s/127.0.0.1/todo.ksrihari.online/g' /var/www/html/app/frontend/config/index.js
