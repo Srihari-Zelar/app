@@ -35,8 +35,10 @@ DOWNLOAD_COMPONENT
 cd frontend
 
 Head "run and build npm"
-npm install shelljs &>>$LOG
-npm install -g npm@latest &>>$LOG && npm install --save-dev  --unsafe-perm node-sass &>>$LOG  && npm run build & &>>$LOG
+#npm install shelljs &>>$LOG
+npm install -g npm@latest &>>$LOG
+#npm install --save-dev  --unsafe-perm node-sass &>>$LOG
+npm run build  &>>$LOG
 Stat $?
 
 Head "------------xx------------------"
