@@ -29,7 +29,8 @@ cd todo/
 
 Head "Installing NPM"
 #npm install -y &>>$LOG
-npm install -g npm@latest &>>$LOG
+#npm install -g npm@latest &>>$LOG
+npm install --save-dev  --unsafe-perm node-sass &>>$LOG
 Stat $?
 
 Head "pass the EndPoints in Service File"
