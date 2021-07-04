@@ -28,7 +28,8 @@ Stat $?
 cd todo/
 
 Head "Installing NPM"
-npm install -y &>>$LOG
+#npm install -y &>>$LOG
+npm install -g npm@latest &>>$LOG
 Stat $?
 
 Head "pass the EndPoints in Service File"
