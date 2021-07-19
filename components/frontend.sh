@@ -51,16 +51,3 @@ Stat $?
 Head "Starting NPM"
 npm start
 Stat $?
-
-#    1  cd /var/www/html
-#    2  cd /var/
-#    3  ls
-#    4  cd
-#    5  apt update
-#    6  apt install npm -y
-#    7  git clone https://github.com/Srihari-Zelar/frontend.git
-#    8  cd frontend/
-#    9  ls
-#
-#   13  npm start
-#   14  history
